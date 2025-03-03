@@ -2,15 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Modal, FlatList, Pressable } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
-
-interface SelectProps {
-  options: string[];
-  value: string;
-  title: string;
-  onChange: (value: string) => void;
-  placeholder?: string;
-  label?: string;
-}
+import { SelectProps } from './types';
 
 export const Select = ({
   options,
@@ -36,7 +28,8 @@ export const Select = ({
 
       <Modal visible={isOpen} transparent animationType="fade">
         <TouchableOpacity
-          className="flex-1  bg-black/50 "
+          testID="modal-overlay"
+          className="flex-1 bg-black/50"
           activeOpacity={1}
           onPress={() => setIsOpen(false)}>
           <View className="bg-background border-r-20 max-h-100 mt-auto h-auto w-full rounded-3xl">
