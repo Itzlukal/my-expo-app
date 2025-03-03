@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text } from 'react-native';
 
 import { HomeForm } from '~/components';
+import { useHomeScreen } from './hook';
 
 export const Home: React.FC = () => {
-  const [selectedOption, setSelectedOption] = useState<string>('');
-  const [isChecked, setIsChecked] = useState<boolean>(false);
-
-  const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
+  const { selectedOption, setSelectedOption, isChecked, setIsChecked, options } = useHomeScreen();
 
   return (
     <View className="bg-background flex-1 items-center justify-center gap-10 p-4">
